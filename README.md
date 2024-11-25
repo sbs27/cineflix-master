@@ -1,46 +1,97 @@
-# Getting Started with Create React App
+# CINEFLIX
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Cinwflix- Movie and TV Show Streaming App! This app is designed to let users explore trending videos from YouTube, including popular movies and TV shows. Users can search for videos, bookmark their favorites, and watch them in full-screen mode. It uses the free YouTube Data API v3 to fetch trending content.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Displays trending movies and TV shows from YouTube.
+- Real-time search functionality to filter videos by title.
+- Bookmark favorite videos for quick access.
+- Full-screen video player for seamless viewing.
+- Fully responsive design for use on mobile, tablet, and desktop devices.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React with TypeScript for building a modern, type-safe frontend.
+- Material-UI (MUI) for consistent and clean user interface design.
+- YouTube Data API v3 for fetching trending video data.
+- React Context API for global state management.
+- React Router for navigation between pages.
+- Vite as the build tool for fast development.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation Instructions
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Ensure the following are installed on your system:
+- Node.js (version 14 or higher)
+- npm or yarn for managing dependencies
 
-### `npm run build`
+### Steps to Install and Run the Project
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the Repository**:
+   Clone the project to your local machine:
+   ```
+   git clone https://github.com/your-username/movie-tv-show-streaming-app.git
+   cd movie-tv-show-streaming-app
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install Dependencies**:
+   Install the required dependencies:
+   ```
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Setup YouTube API Key**:
+   Create a `.env` file in the root directory and add your YouTube API key. Obtain your key from the [Google Developers Console](https://console.developers.google.com/).
+   ```
+   REACT_APP_YOUTUBE_API_KEY=your_youtube_api_key
+   ```
+   Replace `your_youtube_api_key` with your actual API key.
 
-### `npm run eject`
+4. **Start the Development Server**:
+   Run the app:
+   ```
+   npm run dev
+   ```
+   Open your browser and go to `http://localhost:3000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Project Structure
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+src/
+├── assets/                # Static assets like images
+├── components/            # Reusable UI components
+├── context/               # Global state management files
+├── pages/                 # Main app pages
+├── utils/                 # Utility functions like fetchTrendingVideos
+├── App.tsx                # Root component
+└── index.tsx              # Entry point for the app
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## How It Works
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. **Trending Videos**:
+   The app fetches trending videos from the YouTube Data API using the `/videos` endpoint. The videos include metadata like titles, thumbnails, and video IDs.
 
-## Learn More
+2. **Search Functionality**:
+   Users can type into the search bar to filter videos based on their titles. The search updates the displayed list dynamically.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Bookmarking**:
+   Clicking the heart icon on a video bookmarks it. The app remembers bookmarks during the current session.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Full-Screen Video Player**:
+   Clicking on a video opens it in a full-screen embedded YouTube player.
+
+## Future Enhancements
+
+- Add user authentication for personalized features.
+- Include advanced filters for genres, ratings, and release years.
+- Support trending videos from multiple regions.
+- Introduce backend support for saving user preferences and bookmarks.
+- Implement infinite scrolling for exploring more videos.
+
+## License
+
+This project is licensed under the MIT License.
+
